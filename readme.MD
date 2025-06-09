@@ -1,4 +1,4 @@
-## Deploy the application in minikube 
+## Steps to deploy the application in minikube 
 ## you need to install minikube for linux
 ```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -112,20 +112,20 @@ exit
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ivlfront-deployment
+  name: frontend-deployment
 spec:
   replicas: 1  # Number of Pods to run
   selector:
     matchLabels:
-      app: ivlfront  # Updated label to match Pods
+      app: frontend  # Updated label to match Pods
   template:
     metadata:
       labels:
-        app: ivlfront  # Label updated to match Pods
+        app: frontend  # Label updated to match Pods
     spec:
       containers:
-        - name: ivlfront-container  # Container name updated
-          image: ip-address:port/ivl_project/ivl-frontend # Updated image path
+        - name: frontend-container  # Container name updated
+          image: ip-address:port/project/frontend # Updated image path
           ports:
             - containerPort: 3000  # Port your app will run on inside the container
       imagePullSecrets:
@@ -135,10 +135,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ivlfront-service  # Service name
+  name: frontend-service  # Service name
 spec:
   selector:
-    app: ivlfront  # Selector to match the app label in Deployment
+    app: frontend  # Selector to match the app label in Deployment
   ports:
     - port: 3000        # External port exposed on the service (host)
       targetPort: 3000   # Port inside the container where the app runs (container)
