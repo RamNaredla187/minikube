@@ -1,4 +1,4 @@
-## Deploy the application in minikube 
+## Steps to deploy the application in minikube 
 ## you need to install minikube for linux
 ```bash
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
