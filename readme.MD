@@ -107,7 +107,7 @@ sudo systemctl restart docker
 ```bash 
 exit
 ```
-## write the deployment.yaml file to deploy the ivl-frontend application in minikube
+## write the deployment.yaml file to deploy the frontend application in minikube
 ```bash
 apiVersion: apps/v1
 kind: Deployment
